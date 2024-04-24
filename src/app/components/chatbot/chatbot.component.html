@@ -1,0 +1,31 @@
+<script>
+  !(function () {
+    let e = document.createElement("script"),
+      t = document.head || document.getElementsByTagName("head")[0];
+    (e.src = "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+      (e.async = !0),
+      (e.onload = () => {
+        window.WebChat.default(
+          {
+            customData: { language: "fr" },
+            initPayload: "/bonjour",
+            socketUrl: "http://34.163.142.140:5005",
+            socketPath: "/socket.io/",
+            title: "Sama Chat",
+            embedded: false,
+            displayUnreadCount: true,
+            subtitle: "Votre assistant virtuel intelligent",
+            docViewer: false,
+            inputTextFieldHint: "Tapez votre message",
+            showFullScreenButton: true,
+            showMessageDate: true,
+            params: { storage: "local" },
+
+            // add other props here
+          },
+          null
+        );
+      }),
+      t.insertBefore(e, t.firstChild);
+  })();
+</script>
