@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --primary: #0c2e8a;
+  --primary: #011d7c;
   --secondary: #15ACE1;
   --light: #F4F7FE;
   --dark: #14183E;
+  --danger: #AD0216;
+}
+
+body{
+  background-color: var(--light)!important;
 }
 
 /*** Spinner ***/
@@ -87,18 +92,19 @@ h6,
 .navbar {
   padding: 11px 0 !important;
   height: 75px;
+  background-color: (var(--light));
 }
 
 .navbar .navbar-nav .nav-link {
   margin-right: 35px;
   padding: 0;
-  color: rgba(255, 255, 255, .7);
+  color: var(--primary)!important;
   outline: none;
 }
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-  color: rgba(255, 255, 255, 1);
+  color: var(--danger)!important;
 }
 
 .navbar .dropdown-toggle::after {
@@ -466,6 +472,7 @@ h6,
 .footer {
   background: url(/src/assets/img/footer.png) center center no-repeat;
   background-size: contain;
+  background-color: #AD0216;
 }
 
 .footer .btn.btn-social {

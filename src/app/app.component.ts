@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ChatbotComponent } from "./components/chatbot/chatbot.component";
+import { FooterComponent } from "./components/footer/footer.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [CommonModule, RouterOutlet, NavbarComponent, RouterLink, RouterLinkActive, ChatbotComponent]
+    imports: [CommonModule, RouterOutlet, NavbarComponent, RouterLink, RouterLinkActive, ChatbotComponent, FooterComponent]
 })
 export class AppComponent implements OnInit  {
   title = 'sama-tech';
