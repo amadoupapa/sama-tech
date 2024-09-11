@@ -1,11 +1,12 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { ProjetService } from '../../services-api/projet.service';
+import { NgClass, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-details-projet',
   standalone: true,
-  imports: [],
+  imports: [NgOptimizedImage, NgClass],
   templateUrl: './details-projet.component.html',
   styleUrl: './details-projet.component.scss',
 })
@@ -16,6 +17,7 @@ export class DetailsProjetComponent implements OnInit {
   
   projet: any;
   idProjet: number | undefined;
+  descriptionText:any;
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {

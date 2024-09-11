@@ -2,39 +2,39 @@
     <div id="contact" class="container-fluid py-5">
         <div class="container py-5">
             <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h2 class="mb-4 text-primary">Prêt à Commencer? Contactez-nous dès Aujourd'hui!</h2>
+                <h2 class="mb-4 text-danger">Prêt à Commencer ? Contactez-nous dès Aujourd'hui!</h2>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="wow fadeIn" data-wow-delay="0.3s">
-                        <form>
+                        <form [formGroup]="contactForm">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                        <label for="name">Votre Nom</label>
+                                        <input formControlName="nomComplet" type="text" class="form-control" id="name" placeholder="Votre Nom complet" required>
+                                        <label for="name">Votre Nom complet</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <input formControlName="email" type="email" class="form-control" id="email" placeholder="Votre Email" required>
                                         <label for="email">Votre Email</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        <input formControlName="objet" type="text" class="form-control" id="subject" placeholder="Objet" required>
                                         <label for="subject">Objet</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                        <textarea formControlName="message" class="form-control" placeholder="Votre message" id="message" style="height: 150px" required></textarea>
                                         <label for="message">Message</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Envoyer</button>
+                                    <button class="btn btn-primary w-100 py-3" (click)="envoyerMessage()" [disabled]="!contactForm.valid">Envoyer</button>
                                 </div>
                             </div>
                         </form>

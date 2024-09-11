@@ -5,22 +5,17 @@
       style="max-width: 500px"
     >
      
-      <h2 class="mb-4 text-primary">Nos Partenaires</h2>
+      <h2 class="mb-4 text-danger">Nos Partenaires</h2>
     </div>
         <div class="scrolling-wrapper row flex-row flex-nowrap mx-5 mt-4 pb-4 pt-2 disable-scrollbars">
-         
-            
-              
-                <img class="mx-1" src="{{partenaireListe[0]['logoUrl']}}" alt=""> 
-                <img class="mx-1" src="{{partenaireListe[0]['logoUrl']}}" alt=""> 
-                <img class="mx-1" src="{{partenaireListe[0]['logoUrl']}}" alt=""> 
-                <img class="mx-1" src="{{partenaireListe[0]['logoUrl']}}" alt=""> 
-                <img class="mx-1" src="{{partenaireListe[0]['logoUrl']}}" alt=""> 
-                <img class="mx-1" src="{{partenaireListe[0]['logoUrl']}}" alt=""> 
-                <img class="mx-1" src="{{partenaireListe[0]['logoUrl']}}" alt=""> 
-                <img class="mx-1" src="{{partenaireListe[0]['logoUrl']}}" alt=""> 
-                <img class="mx-1" src="{{partenaireListe[0]['logoUrl']}}" alt="">        
-              
+                      
+                @for (partenaire of partenaireListe; track $index) {
+                 
+                   <div class="col-md-2 mx-1 d-flex justify-content-center">
+                    <img class=" img-fluid rounded mx-1" src="{{partenaire['logoUrl']}}" alt=""> 
+                   </div>
+                  
+                }
            
           
          </div>
