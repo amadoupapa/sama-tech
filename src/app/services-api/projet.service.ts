@@ -21,4 +21,12 @@ export class ProjetService {
   fiindById(id:Number):Observable<any>{
    return this.http.post(`${this.PUBLIC_BASE_URL}/find-by-id`,{id:id})
   }
+
+  findImagesDataPaysage(projetId:Number):Observable<any>{
+    return this.http.get(`${this.PUBLIC_BASE_URL}/images-data-paysage/${projetId}`)
+  }
+
+  findImageDataPaysageByIndex(projetId:Number, imageIndex:Number):Observable<any>{
+    return this.http.get(`${this.PUBLIC_BASE_URL}/images-data-paysage/${projetId}/${imageIndex}`)
+  }
 }

@@ -1,3 +1,21 @@
-<div class="mb-5"><app-navbar></app-navbar></div>
-<div class="pt-5"><router-outlet></router-outlet></div>
-<app-footer></app-footer>
+@if (isLoggedIn) {
+
+<div class="row flex-nowrap">
+  <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white text-white">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="col py-3">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+}@else {
+  @defer ( when isLoggedIn == false) {
+    <div class="mb-5"><app-navbar></app-navbar></div>
+    <div class="pt-5"><router-outlet></router-outlet></div>
+    <app-footer></app-footer>
+    } 
+}
+
+

@@ -15,7 +15,7 @@ export class DetailsProjetComponent implements OnInit {
   private projetService = inject(ProjetService);
 
   
-  projet: any;
+  projet:any;
   idProjet: number | undefined;
   descriptionText:any;
 
@@ -26,7 +26,7 @@ export class DetailsProjetComponent implements OnInit {
     if (this.idProjet) {
       this.projetService.fiindById(this.idProjet).forEach((p) => {
         this.projet = p;
-        console.log("Objet projet : ",p);
+        console.log("Objet projet : ",p['titre']);
       });
     }
 

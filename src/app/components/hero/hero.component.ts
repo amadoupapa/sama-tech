@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Alert } from '../../utils/alert';
 
 @Component({
   selector: 'app-hero',
@@ -9,4 +10,6 @@ import { Component } from '@angular/core';
 })
 export class HeroComponent {
 
+
+  
 }

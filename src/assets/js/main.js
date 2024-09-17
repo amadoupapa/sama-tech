@@ -60,6 +60,26 @@
             '<i class="bi bi-chevron-right"></i>'
         ]
     });
+
+    //init owl carousel
+    $(document).ready(function(){
+        $(".partenaires-carousel").owlCarousel({
+            loop:true,
+            margin:10,
+            autoplay:true,
+            autoplayTimeout:3000,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:5
+                }
+            }});
+      });
     
 })(jQuery);
 
