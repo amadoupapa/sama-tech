@@ -6,6 +6,7 @@ import { DetailsProjetComponent } from './pages/details-projet/details-projet.co
 import { HomeDashComponent } from './components/admin/dash/home-dash/home-dash.component';
 import { GestionOffresComponent } from './components/admin/dash/gestion-offres/gestion-offres.component';
 import { AuthGuard } from './guards/role.guard';
+import { LoginComponent } from './components/admin/login/login.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,6 +24,10 @@ export const routes: Routes = [
     path: 'details-projet/:idProjet',
     component: DetailsProjetComponent,
   },
+  {
+    path: 'admin/login',
+    component: LoginComponent,
+  },
 
   {
     path: 'admin/dash',
@@ -32,6 +37,7 @@ export const routes: Routes = [
   },
   {
     path:'admin/gestion-offres',
-    component: GestionOffresComponent
+    component: GestionOffresComponent,
+    canActivate:[AuthGuard]
   }
 ];

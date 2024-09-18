@@ -1,53 +1,49 @@
 <!-- Case Start -->
 <div id="projects" class="container-fluid bg-light py-5">
   <div class="container py-5">
-  
     <div
       class="mx-auto text-center wow fadeIn"
       data-wow-delay="0.1s"
       style="max-width: 500px"
     >
-     
       <h2 class="mb-4 text-danger">Explorer Nos Récents Projets</h2>
     </div>
     <div class="row g-4">
-      @if (isLoading) { <div class="spinner-border" role="status">
+      @if (isLoading) {
+      <div class="spinner-border" role="status">
         <span class="sr-only">Loading...</span>
-      </div>}
-      @if (posts) {
-      
-        @for(p of posts;track $index ){
-          <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
-    
-            <div class="case-item position-relative overflow-hidden rounded mb-2">
-              <img
-                class="img-fluid"
-                src="{{p['imagesDataPaysage'][0]['base64Data']}}"
-                alt=""
-              />
-              <a class="case-overlay text-decoration-none">
-                <!-- <small>Robotic Automation</small> -->
-                <h5 class="lh-base text-white mb-3">
-                  {{p['titre']}}
-                </h5>
-                <span routerLink="/details-projet/{{p['id']}}" class="btn btn-square btn-primary"
-                  ><i class="fa fa-arrow-right"></i
-                ></span>
-              </a>
-            </div>
-          </div>
-    
-          }
-      }@else{
-        <div class="container d-flex placeholder-glow">
-          <div class="col-4 skeleton skeleton-box"></div>
-          <div class="col-4 skeleton skeleton-box"></div>
-          <div class="col-4 skeleton skeleton-box"></div>
       </div>
-       
-      }
+      } @if (posts) { @for(p of posts;track $index ){ @defer () {
+      <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+        <div class="case-item position-relative overflow-hidden rounded mb-2">
+          <img
+            class="img-fluid"
+            src="{{ p['imagesDataPaysage'][0]['base64Data'] }}"
+            alt=""
+          />
+          <a class="case-overlay text-decoration-none">
+            <!-- <small>Robotic Automation</small> -->
+            <h5 class="lh-base text-white mb-3">
+              {{ p["titre"] }}
+            </h5>
+            <span
+              routerLink="/details-projet/{{ p['id'] }}"
+              class="btn btn-square btn-primary"
+              ><i class="fa fa-arrow-right"></i
+            ></span>
+          </a>
+        </div>
+      </div>
+      } @loading(minimum 4s) {
+      <div class="col-3 skeleton skeleton-box"></div>
+      } } }@else{
+      <div class="container d-flex placeholder-glow">
+        <div class="col-4 skeleton skeleton-box"></div>
+        <div class="col-4 skeleton skeleton-box"></div>
+        <div class="col-4 skeleton skeleton-box"></div>
+      </div>
 
-     
+      }
 
       <!-- <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
                     <div class="case-item position-relative overflow-hidden rounded mb-2">

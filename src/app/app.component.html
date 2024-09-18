@@ -10,12 +10,10 @@
   </div>
 </div>
 
-}@else {
-  @defer ( when isLoggedIn == false) {
+} @else {
+  @defer ( when !isLoggedIn) {
     <div class="mb-5"><app-navbar></app-navbar></div>
     <div class="pt-5"><router-outlet></router-outlet></div>
     <app-footer></app-footer>
-    } 
+    }
 }
-
-

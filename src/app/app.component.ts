@@ -17,20 +17,15 @@ import { AuthService } from './services-api/auth.service';
 })
 export class AppComponent implements OnInit  {
   authservice = inject(AuthService)
-  isAdmin = true;
+  isAdmin = false;
   isLoggedIn = false;
   title = 'sama-tech';
   constructor(private activatedRoute: ActivatedRoute){}
   
 
   ngOnInit(): void {
-
-  this.authservice.loggedInObs.subscribe({
-    next:value=>{
-      this.isLoggedIn = value
-    }
-  })
-
+    
+    this.isLoggedIn = this.authservice.isTokenValid()
 
     this.activatedRoute.fragment.subscribe((fragment: string | null) => {
       if (fragment) this.jumpToSection(fragment);
